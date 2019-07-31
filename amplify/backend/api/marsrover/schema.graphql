@@ -1,0 +1,21 @@
+type Rover {
+  id: ID!
+  name: String!
+  status: String
+  cameras: [Camera]
+}
+
+type Camera {
+  name: String!
+  full_name: String!
+}
+
+type Photo {
+  id: ID!
+  img_src: String!
+}
+
+type Query {
+  rovers: [Rover] @function(name: "marsrover-${env}")
+  photos(rover: String, camera: String, sol: String): [Photo] @function(name: "marsroverphotos-${env}")
+}
