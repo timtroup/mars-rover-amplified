@@ -1,0 +1,14 @@
+{
+    "mars": {
+        "awscloudformation": {
+            "AuthRoleName": "mars-rover-mars-20190726142642-authRole",
+            "UnauthRoleArn": "arn:aws:iam::976634165187:role/mars-rover-mars-20190726142642-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::976634165187:role/mars-rover-mars-20190726142642-authRole",
+            "Region": "eu-west-1",
+            "DeploymentBucketName": "mars-rover-mars-20190726142642-deployment",
+            "UnauthRoleName": "mars-rover-mars-20190726142642-unauthRole",
+            "StackName": "mars-rover-mars-20190726142642",
+            "StackId": "arn:aws:cloudformation:eu-west-1:976634165187:stack/mars-rover-mars-20190726142642/a0407dc0-afa0-11e9-ab9e-066324f10f26"
+        }
+    }
+}
