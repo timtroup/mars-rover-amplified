@@ -5,6 +5,7 @@ import RoverList from '../containers/rover-list';
 import CameraList from '../containers/camera-list';
 import DateSelector from '../containers/date-selector';
 import FindPhotos from '../containers/find-photos';
+import ImageGallery from '../containers/image-gallery';
 import {Grid, Row, Col, Popover, OverlayTrigger, Button, Glyphicon, Panel} from 'react-bootstrap';
 import {AutoAffix} from 'react-overlays';
 import './App.css';
@@ -42,6 +43,9 @@ class App extends Component {
                             </Col>
                         </Panel>
                     </AutoAffix>
+                </Row>
+                <Row>
+                    <ImageGallery />
                 </Row>
             </Grid>
         );

@@ -1,5 +1,5 @@
 import {API, graphqlOperation} from 'aws-amplify'
-import {rovers} from '../graphql/queries'
+import {photos} from '../graphql/queries'
 
 export const REQUEST_PHOTOS = 'REQUEST_PHOTOS';
 export const RECEIVE_PHOTOS = 'RECEIVE_PHOTOS';
@@ -18,12 +18,9 @@ export const receivePhotos = (json) => ({
 export const fetchPhotos = (rover, sol, camera) => dispatch => {
     dispatch(requestPhotos(rover));
 
-    let url = `${ROOT_URL}/${rover}/photos?earth_date=${sol}`;
-    if(camera !== 'ALL') {
-        url = url + `&camera=${camera}`;
-    }
 
-    return API.graphql(graphqlOperation(rovers))
+
+    return API.graphql(graphqlOperation(photos, {rover: rover, camera: camera, sol: sol}))
         .then(response => {
             if (!response.data) {
                 throw Error(response.statusText);
@@ -34,5 +31,5 @@ export const fetchPhotos = (rover, sol, camera) => dispatch => {
         .then(json => dispatch(receivePhotos(json)))
         .catch(function(error) {
             return dispatch(receivePhotos({photos:[]}));
-        });
+        })
 };
