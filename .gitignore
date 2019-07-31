@@ -32,3 +32,8 @@ dist/
 node_modules/
 aws-exports.js
 awsconfiguration.json
+src/graphql/queries.js
+
+#Intellij
+.idea/
+*.iml
